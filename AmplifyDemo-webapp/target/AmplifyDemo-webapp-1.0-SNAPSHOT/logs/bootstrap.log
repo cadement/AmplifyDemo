@@ -1,0 +1,15 @@
+INFO  26.12.2013 22:50:57  Trying to initialize repositories from: 
+    /Users/caseydement/Projects/AmplifyDemo/AmplifyDemo-webapp/target/AmplifyDemo-webapp-1.0-SNAPSHOT/WEB-INF/bootstrap/author
+    /Users/caseydement/Projects/AmplifyDemo/AmplifyDemo-webapp/target/AmplifyDemo-webapp-1.0-SNAPSHOT/WEB-INF/bootstrap/common
+INFO  26.12.2013 22:50:57  Repository [imaging] has been initialized.
+INFO  26.12.2013 22:50:57  Repository [website] has been initialized.
+INFO  26.12.2013 22:50:57  Repository [users] has been initialized.
+INFO  26.12.2013 22:50:57  Repository [mgnlVersion] has been initialized.
+INFO  26.12.2013 22:50:57  Repository [config] has been initialized.
+INFO  26.12.2013 22:50:57  Repository [dam] has been initialized.
+INFO  26.12.2013 22:50:57  Repository [userroles] has been initialized.
+INFO  26.12.2013 22:50:57  Repository [messages] has been initialized.
+INFO  26.12.2013 22:50:57  Repository [mgnlSystem] has been initialized.
+INFO  26.12.2013 22:50:57  Repository [dms] has been initialized.
+INFO  26.12.2013 22:50:57  Repository [profiles] has been initialized.
+INFO  26.12.2013 22:50:57  Repository [usergroups] has been initialized.
