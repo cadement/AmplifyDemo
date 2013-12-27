@@ -8,6 +8,10 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>webapp</module>
+    </modules>
+
     <properties>
         <magnoliaVersion>5.2</magnoliaVersion>
         <javaVersion>1.6</javaVersion>
@@ -97,8 +101,4 @@
             <url>http://maven.vaadin.com/vaadin-addons</url>
         </repository>
     </repositories>
-
-    <modules>
-        <module>AmplifyDemo-webapp</module>
-    </modules>
 </project>
