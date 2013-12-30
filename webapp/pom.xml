@@ -21,6 +21,16 @@
             <artifactId>magnolia-empty-webapp</artifactId>
             <type>pom</type>
         </dependency>
+
+        <dependency>
+            <groupId>info.magnolia</groupId>
+            <artifactId>magnolia-demo-project</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>info.magnolia</groupId>
+            <artifactId>magnolia-module-categorization</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>info.magnolia</groupId>
             <artifactId>magnolia-empty-webapp</artifactId>

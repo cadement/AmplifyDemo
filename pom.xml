@@ -13,8 +13,10 @@
     </modules>
 
     <properties>
-        <magnoliaVersion>5.2</magnoliaVersion>
         <javaVersion>1.6</javaVersion>
+        <magnoliaVersion>5.2</magnoliaVersion>
+        <magnolia-demo-project.version>2.7.1</magnolia-demo-project.version>
+        <magnolia-module-categorization.version>2.1</magnolia-module-categorization.version>
     </properties>
 
     <!-- Fill the following in, so you can use the release plugin -->
@@ -34,6 +36,27 @@
                 <version>${magnoliaVersion}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>info.magnolia</groupId>
+                <artifactId>magnolia-demo-project</artifactId>
+                <version>${magnolia-demo-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.magnolia</groupId>
+                <artifactId>magnolia-module-standard-templating-kit</artifactId>
+                <version>${magnolia-demo-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.magnolia</groupId>
+                <artifactId>magnolia-theme-pop</artifactId>
+                <version>${magnolia-demo-project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.magnolia</groupId>
+                <artifactId>magnolia-module-categorization</artifactId>
+                <version>${magnolia-module-categorization.version}</version>
             </dependency>
 
             <!-- TEST -->
