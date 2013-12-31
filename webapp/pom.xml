@@ -13,9 +13,11 @@
     <name>AmplifyDemo: webapp</name>
     <packaging>war</packaging>
     <dependencies>
-        <!-- Add your project specific dependencies here: -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
 
-        <!-- Overlay Magnolia Empty Webapp. Alternatively, use the bundled-webapp or the enterprise-webapp. Dependencies versions are already imported by parent, so no need to replicate here. -->
         <dependency>
             <groupId>info.magnolia</groupId>
             <artifactId>magnolia-empty-webapp</artifactId>
@@ -35,6 +37,17 @@
             <groupId>info.magnolia</groupId>
             <artifactId>magnolia-empty-webapp</artifactId>
             <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

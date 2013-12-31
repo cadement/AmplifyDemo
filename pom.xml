@@ -10,10 +10,14 @@
 
     <modules>
         <module>webapp</module>
+        <module>application</module>
     </modules>
 
     <properties>
         <javaVersion>1.6</javaVersion>
+        <servlet-api.version>2.5</servlet-api.version>
+        <jsp-api.version>2.1</jsp-api.version>
+        <spring.version>3.2.6.RELEASE</spring.version>
         <magnoliaVersion>5.2</magnoliaVersion>
         <magnolia-demo-project.version>2.7.1</magnolia-demo-project.version>
         <magnolia-module-categorization.version>2.1</magnolia-module-categorization.version>
@@ -28,8 +32,12 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- Importing dependencyManagement of CE bundle. This means you don't have to specify versions of modules you depend on (unless you want a different version than that of the bundle).
-                 Alternatively, use info.magnolia.eebundle:magnolia-enterprise-bundle-parent -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>info.magnolia.bundle</groupId>
                 <artifactId>magnolia-bundle-parent</artifactId>
@@ -57,6 +65,20 @@
                 <groupId>info.magnolia</groupId>
                 <artifactId>magnolia-module-categorization</artifactId>
                 <version>${magnolia-module-categorization.version}</version>
+            </dependency>
+
+            <!-- javax.servlet stuff -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>${servlet-api.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>jsp-api</artifactId>
+                <version>${jsp-api.version}</version>
+                <scope>provided</scope>
             </dependency>
 
             <!-- TEST -->
