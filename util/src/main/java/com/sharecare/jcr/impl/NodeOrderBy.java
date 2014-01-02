@@ -1,25 +1,11 @@
-package com.sharecare.jcr.search;
+package com.sharecare.jcr.impl;
 
-public class NodeOrderBy {
+import com.sharecare.jcr.Ordering;
+
+class NodeOrderBy {
 
     private final String   name;
     private final Ordering ordering;
-
-
-
-    public static enum Ordering {
-        ASCENDING("ASC"), DESCENDING("DESC");
-
-        private final String value;
-
-        Ordering(String value) {
-            this.value = value;
-        }
-
-        public String value() {
-            return value;
-        }
-    }
 
     public NodeOrderBy(String name, Ordering ordering) {
         this.name = name;

@@ -1,6 +1,7 @@
-package com.sharecare.jcr.search;
+package com.sharecare.jcr.impl;
 
-public class PropertyEqualsCriterion implements NodeCriterion {
+class PropertyEqualsCriterion implements NodeCriterion {
+
     private final String name;
     private final String value;
 

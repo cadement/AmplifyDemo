@@ -1,9 +1,10 @@
-package com.sharecare.jcr.search;
+package com.sharecare.jcr.impl;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-public class IsChildOfCriterion implements NodeCriterion {
+class IsChildOfCriterion implements NodeCriterion {
+
     private final String parentPath;
 
     public IsChildOfCriterion(String parentPath) {

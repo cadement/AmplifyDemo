@@ -1,6 +1,7 @@
-package com.sharecare.jcr.search;
+package com.sharecare.jcr.impl;
 
-public class PropertyExistsCriterion implements NodeCriterion {
+class PropertyExistsCriterion implements NodeCriterion {
+
     private final String name;
 
     public PropertyExistsCriterion(String name) {

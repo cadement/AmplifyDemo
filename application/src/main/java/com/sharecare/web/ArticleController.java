@@ -1,10 +1,6 @@
 package com.sharecare.web;
 
-import com.sharecare.jcr.NodeType;
-import com.sharecare.jcr.SearchBuilder;
-import com.sharecare.jcr.SearchService;
-import com.sharecare.jcr.Workspace;
-import com.sharecare.jcr.search.NodeOrderBy;
+import com.sharecare.jcr.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,7 +36,7 @@ public class ArticleController {
                 searchBuilder
                         .nodeType(NodeType.PAGE)
                         .addIsChildOf("/demo-project/news-and-events/news-overview")
-                        .addOrderBy("date", NodeOrderBy.Ordering.DESCENDING)
+                        .addOrderBy("date", Ordering.DESCENDING)
                         .build()
         );
         if (nodes.isEmpty()) {

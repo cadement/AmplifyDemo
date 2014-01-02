@@ -1,8 +1,9 @@
-package com.sharecare.jcr.search;
+package com.sharecare.jcr.impl;
 
+import com.sharecare.jcr.Search;
 import com.sharecare.jcr.NodeType;
+import com.sharecare.jcr.Ordering;
 import com.sharecare.jcr.SearchBuilder;
-import com.sharecare.jcr.search.*;
 import org.springframework.stereotype.Component;
 
 import javax.jcr.Node;
@@ -13,7 +14,7 @@ import java.util.List;
 import static java.util.Collections.emptyList;
 
 @Component
-public class SearchBuilderImpl implements SearchBuilder {
+class SearchBuilderImpl implements SearchBuilder {
 
     private final NodeType            nodeType;
     private final List<NodeCriterion> nodeCriteria;
@@ -85,14 +86,14 @@ public class SearchBuilderImpl implements SearchBuilder {
         return new SearchBuilderImpl(nodeType, nodeCriteria, nodeOrderBys);
     }
 
-    @Override public SearchBuilder addOrderBy(String name, NodeOrderBy.Ordering ordering) {
+    @Override public SearchBuilder addOrderBy(String name, Ordering ordering) {
         List<NodeOrderBy> nodeOrderBys = new ArrayList<NodeOrderBy>(this.nodeOrderBys.size() + 1);
         nodeOrderBys.addAll(this.nodeOrderBys);
         nodeOrderBys.add(new NodeOrderBy(name, ordering));
         return new SearchBuilderImpl(nodeType, nodeCriteria, nodeOrderBys);
     }
 
-    @Override public JCRSearch build() {
-        return new JCRSearch(nodeType, nodeCriteria, nodeOrderBys);
+    @Override public Search build() {
+        return new SearchImpl(nodeType, nodeCriteria, nodeOrderBys);
     }
 }

@@ -1,15 +1,10 @@
 package com.sharecare.jcr;
 
-import com.sharecare.jcr.search.JCRSearch;
-import com.sharecare.jcr.search.NodeOrderBy;
-
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-/**
- * Created by caseydement on 12/31/13.
- */
 public interface SearchBuilder {
+
     SearchBuilder nodeType(NodeType nodeType);
 
     SearchBuilder addPropertyEquals(String name, String value);
@@ -26,7 +21,7 @@ public interface SearchBuilder {
 
     SearchBuilder addIsDescendantOf(Node parent) throws RepositoryException;
 
-    SearchBuilder addOrderBy(String name, NodeOrderBy.Ordering ordering);
+    SearchBuilder addOrderBy(String name, Ordering ordering);
 
-    JCRSearch build();
+    Search build();
 }

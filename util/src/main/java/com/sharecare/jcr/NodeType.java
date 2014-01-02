@@ -1,6 +1,7 @@
 package com.sharecare.jcr;
 
 public enum NodeType {
+
     BASE("nt:base"),
     PAGE("mgnl:page");
 
