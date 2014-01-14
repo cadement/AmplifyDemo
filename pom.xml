@@ -4,7 +4,7 @@
     <groupId>com.sharecare</groupId>
     <artifactId>AmplifyDemo</artifactId>
     <name>AmplifyDemo (parent pom)</name>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
 
     <modules>
