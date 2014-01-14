@@ -31,17 +31,12 @@
 
         <dependency>
             <groupId>info.magnolia</groupId>
-            <artifactId>magnolia-demo-project</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>info.magnolia</groupId>
-            <artifactId>magnolia-module-categorization</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>info.magnolia</groupId>
             <artifactId>magnolia-empty-webapp</artifactId>
             <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>info.magnolia.blossom</groupId>
+            <artifactId>magnolia-module-blossom</artifactId>
         </dependency>
 
         <dependency>

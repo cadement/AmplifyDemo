@@ -20,8 +20,7 @@
         <jsp-api.version>2.1</jsp-api.version>
         <spring.version>3.2.6.RELEASE</spring.version>
         <magnoliaVersion>5.2</magnoliaVersion>
-        <magnolia-demo-project.version>2.7.1</magnolia-demo-project.version>
-        <magnolia-module-categorization.version>2.1</magnolia-module-categorization.version>
+        <magnolia-module-blossom.version>3.0</magnolia-module-blossom.version>
         <jcr.version>2.0</jcr.version>
     </properties>
 
@@ -68,6 +67,21 @@
                 <artifactId>magnolia-core</artifactId>
                 <version>${magnoliaVersion}</version>
             </dependency>
+            <dependency>
+                <groupId>info.magnolia</groupId>
+                <artifactId>magnolia-templating</artifactId>
+                <version>${magnoliaVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.magnolia</groupId>
+                <artifactId>magnolia-templating-jsp</artifactId>
+                <version>${magnoliaVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.magnolia.blossom</groupId>
+                <artifactId>magnolia-module-blossom</artifactId>
+                <version>${magnolia-module-blossom.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>javax.jcr</groupId>
@@ -77,11 +91,6 @@
 
             <dependency>
                 <groupId>info.magnolia</groupId>
-                <artifactId>magnolia-demo-project</artifactId>
-                <version>${magnolia-demo-project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>info.magnolia</groupId>
                 <artifactId>magnolia-module-standard-templating-kit</artifactId>
                 <version>${magnolia-demo-project.version}</version>
             </dependency>
@@ -89,11 +98,6 @@
                 <groupId>info.magnolia</groupId>
                 <artifactId>magnolia-theme-pop</artifactId>
                 <version>${magnolia-demo-project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>info.magnolia</groupId>
-                <artifactId>magnolia-module-categorization</artifactId>
-                <version>${magnolia-module-categorization.version}</version>
             </dependency>
 
             <!-- javax.servlet stuff -->
@@ -132,6 +136,18 @@
                     <target>${javaVersion}</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.atlassian.maven.plugins</groupId>
+                <artifactId>maven-jgitflow-plugin</artifactId>
+                <version>1.0-alpha26</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <flowInitContext>
+                        <masterBranchName>master</masterBranchName>
+                        <developBranchName>develop</developBranchName>
+                    </flowInitContext>
+                </configuration>
+            </plugin>
         </plugins>
 
         <!-- default resources configuration which will filter your module descriptors -->
@@ -160,16 +176,6 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
-        <!-- IF YOU NEED MODULES FROM THE ENTERPRISE VERSION, UNCOMMENT THE FOLLOWING REPOSITORY -->
-        <!--
-        <repository>
-          <id>magnolia.enterprise.releases</id>
-          <url>http://nexus.magnolia-cms.com/content/repositories/magnolia.enterprise.releases</url>
-          <snapshots>
-            <enabled>false</enabled>
-          </snapshots>
-        </repository>
-        -->
         <repository>
             <id>vaadin-addons</id>
             <url>http://maven.vaadin.com/vaadin-addons</url>
