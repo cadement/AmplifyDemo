@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 
-<% response.setStatus(503); %>
-<jsp:useBean id="exception" type="java.lang.Exception" scope="request"/>
+<%@taglib prefix="cms" uri="http://magnolia-cms.com/taglib/templating-components/cms" %>
 
 <html>
 
 <head>
-    <title>Error Page</title>
+    <title>${content.title}</title>
 
     <style type="text/css" media="screen, print, projection">
         body, html {
@@ -47,25 +46,38 @@
             height:1px;
         }
 
+        #area {
+            padding: 2px;
+            border: 2px solid black;
+            border-radius: 25px;
+        }
+
+        #component {
+            padding: 2px;
+            border: 2px solid black;
+            border-radius: 25px;
+        }
+
         h1, h2, h3 {
             padding: 2px;
         }
     </style>
-
 </head>
 
 <body>
+
 <div id="wrap">
     <div id="header">
-        <h1>An Error Occurred!</h1>
+        <cms:init/>
+        <h1>${content.title}</h1>
     </div>
 
     <div id="main">
-        <em>${exception.message}</em>
+        <cms:area name="main-column"/>
     </div>
 
     <div id="footer"></div>
 </div>
-</body>
 
+</body>
 </html>

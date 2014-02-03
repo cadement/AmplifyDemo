@@ -85,6 +85,11 @@
         <servlet-name>jsp</servlet-name>
         <url-pattern>/WEB-INF/jsp/*</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>jsp</servlet-name>
+        <url-pattern>/WEB-INF/templates/*</url-pattern>
+    </servlet-mapping>
     <!-- END JSP servlet configuration -->
 
     <!-- BEGIN Magnolia CMS configuration -->

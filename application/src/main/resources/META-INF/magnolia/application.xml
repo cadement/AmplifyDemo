@@ -3,9 +3,18 @@
 <module>
     <name>application</name>
     <displayName>Application Module</displayName>
-    <class>com.sharecare.application.config.ApplicationModule</class>
-    <versionHandler>com.sharecare.application.config.ApplicationModuleVersionHandler</versionHandler>
+    <class>com.sharecare.sample.config.ApplicationModule</class>
+    <versionHandler>com.sharecare.sample.config.ApplicationModuleVersionHandler</versionHandler>
     <version>1.0-SNAPSHOT</version>
+    <components>
+        <id>user-app</id>
+    </components>
+    <components>
+        <id>user-main-subapp</id>
+    </components>
+    <components>
+        <id>user-details-subapp</id>
+    </components>
     <dependencies>
         <dependency>
             <name>core</name>
@@ -21,6 +30,10 @@
         </dependency>
         <dependency>
             <name>templating-jsp</name>
+            <version>5.2/*</version>
+        </dependency>
+        <dependency>
+            <name>ui-admincentral</name>
             <version>5.2/*</version>
         </dependency>
         <dependency>

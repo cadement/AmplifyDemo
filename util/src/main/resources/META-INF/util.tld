@@ -1,0 +1,12 @@
+<taglib xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd" version="2.1">
+    <display-name>Sharecare Sample Util Taglib</display-name>
+    <tlib-version>2.1</tlib-version>
+    <short-name>util</short-name>
+    <uri>http://sharecare.com/taglib/sample/util</uri>
+
+    <function>
+        <name>randomColor</name>
+        <function-class>com.sharecare.jstl.RandomColorGenerator</function-class>
+        <function-signature>java.lang.String getRandomColor()</function-signature>
+    </function>
+</taglib>

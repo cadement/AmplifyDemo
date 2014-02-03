@@ -9,7 +9,7 @@
 
     <context:annotation-config/>
 
-    <context:component-scan base-package="com.sharecare" use-default-filters="false">
+    <context:component-scan base-package="com.sharecare.sample" use-default-filters="false">
         <context:include-filter type="annotation" expression="info.magnolia.module.blossom.annotation.Template"/>
         <context:include-filter type="annotation" expression="info.magnolia.module.blossom.annotation.Area"/>
         <context:include-filter type="annotation" expression="info.magnolia.module.blossom.annotation.DialogFactory"/>
@@ -32,6 +32,7 @@
             </list>
         </property>
     </bean>
+
     <bean class="info.magnolia.module.blossom.view.UuidRedirectViewResolver">
         <property name="order" value="1"/>
     </bean>
