@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.sharecare</groupId>
     <artifactId>AmplifyDemo</artifactId>
     <name>AmplifyDemo (parent pom)</name>
@@ -8,9 +11,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>webapp</module>
-        <module>application</module>
-        <module>util</module>
+        <module>web</module>
+        <module>app</module>
     </modules>
 
     <properties>
@@ -22,28 +24,18 @@
         <magnolia-module-blossom.version>3.0</magnolia-module-blossom.version>
         <jcr.version>2.0</jcr.version>
         <hsqldb.version>1.8.0.10</hsqldb.version>
+        <spring-security.version>3.2.0.RELEASE</spring-security.version>
     </properties>
 
     <!-- Fill the following in, so you can use the release plugin -->
     <scm>
-        <connection />
-        <developerConnection />
-        <url />
+        <connection/>
+        <developerConnection/>
+        <url/>
     </scm>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>com.sharecare</groupId>
-                <artifactId>util</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.sharecare</groupId>
-                <artifactId>application</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
@@ -67,6 +59,27 @@
             </dependency>
 
             <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-core</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-taglibs</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>info.magnolia.bundle</groupId>
                 <artifactId>magnolia-bundle-parent</artifactId>
                 <version>${magnoliaVersion}</version>
@@ -76,6 +89,16 @@
             <dependency>
                 <groupId>info.magnolia</groupId>
                 <artifactId>magnolia-core</artifactId>
+                <version>${magnoliaVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.magnolia</groupId>
+                <artifactId>magnolia-jaas</artifactId>
+                <version>${magnoliaVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.magnolia.activation</groupId>
+                <artifactId>magnolia-module-activation</artifactId>
                 <version>${magnoliaVersion}</version>
             </dependency>
             <dependency>

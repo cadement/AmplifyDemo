@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>Externalized JDBC Queries</comment>
+
+    <!-- User queries -->
+    <entry key="user.create">
+        INSERT INTO User(url, password, name, email, address, lastLogin)
+        VALUES(:url, :password, :name, :email, :address, :lastLogin)
+    </entry>
+    <entry key="user.read">
+        SELECT url, password, name, email, address, lastLogin
+        FROM User
+        WHERE url=:url
+    </entry>
+    <entry key="user.update">
+        UPDATE User
+        SET password=:password, name=:name, email=:email, address=:address, lastLogin=:lastLogin
+        WHERE url=:url
+    </entry>
+    <entry key="user.delete">
+        DELETE FROM User
+        WHERE url=:url
+    </entry>
+    <entry key="user.byName">
+        SELECT url, password, name, email, address, lastLogin
+        FROM User
+        WHERE name=:name
+        LIMIT 1
+    </entry>
+
+    <!-- Article queries -->
+    <entry key="article.create">
+        INSERT INTO Article(url, title, category, published)
+        VALUES(:url, :title, :category, :published)
+    </entry>
+    <entry key="article.read">
+        SELECT url, title, category, published
+        FROM Article
+        WHERE url=:url
+    </entry>
+    <entry key="article.update">
+        UPDATE Article
+        SET title=:title, category=:category, published=:published
+        WHERE url=:url
+    </entry>
+    <entry key="article.delete">
+        DELETE FROM Article
+        WHERE url=:url
+    </entry>
+    <entry key="article.unread">
+        SELECT a.url, a.title, a.category, a.published
+        FROM Article AS a LEFT JOIN ReadArticle AS ra ON a.url = ra.articleUrl AND ra.userUrl = :userUrl
+        WHERE ra.articleUrl IS NULL
+        ORDER BY a.published DESC
+        LIMIT :limit
+    </entry>
+    <entry key="article.byCategory">
+        SELECT url, title, category, published
+        FROM Article
+        WHERE category=:category
+        ORDER BY published DESC
+        LIMIT :limit
+    </entry>
+    <entry key="article.all">
+        SELECT url, title, category, published
+        FROM Article
+        ORDER BY published DESC
+        LIMIT :limit
+    </entry>
+
+    <!-- ReadArticle queries -->
+    <entry key="readarticle.create">
+        INSERT INTO ReadArticle(userUrl, articleUrl, readOn)
+        VALUES(:userUrl, :articleUrl, :readOn)
+    </entry>
+    <entry key="readarticle.read">
+        SELECT userUrl, articleUrl, readOn
+        FROM ReadArticle
+        WHERE userUrl=:userUrl AND articleUrl=:articleUrl
+    </entry>
+    <entry key="readarticle.update">
+        UPDATE ReadArticle
+        SET readOn=:readOn
+        WHERE userUrl=:userUrl AND articleUrl=:articleUrl
+    </entry>
+    <entry key="readarticle.delete">
+        DELETE FROM ReadArticle
+        WHERE userUrl=:userUrl AND articleUrl=:articleUrl
+    </entry>
+    <entry key="readarticle.readBy">
+        SELECT userUrl, articleUrl, readOn
+        FROM ReadArticle
+        WHERE userUrl=:userUrl
+        ORDER BY readOn DESC
+        LIMIT :limit
+    </entry>
+    <entry key="readarticle.deleteArticle">
+        DELETE FROM ReadArticle
+        WHERE articleUrl=:articleUrl
+    </entry>
+</properties>
