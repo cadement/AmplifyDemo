@@ -1,0 +1,98 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    color: black;
+    background: white;
+}
+
+#wrap {
+    width: 1000px;
+    margin: 0 auto;
+    background: lightgrey;
+}
+
+#header {
+    width: 980px;
+    height: 40px;
+    color: white;
+    background: steelblue;
+    padding:5px 10px;
+}
+
+#header h2 {
+    float: left;
+    margin: 5px;
+}
+
+#header h4 {
+    float: right;
+    margin: 2px;
+}
+
+#header a {
+    text-decoration: none;
+}
+
+#header a:link {
+    color: white;
+}
+#header a:visited {
+    color: white;
+}
+#header a:hover {
+    color: white;
+}
+#header a:active {
+    color: white;
+}
+
+.column {
+    padding:10px;
+}
+
+#footer {
+    clear:both;
+    width: 980px;
+    padding:5px 10px;
+    background: steelblue;
+}
+
+#footer p {
+    margin:0;
+}
+
+* html #footer {
+    height:1px;
+}
+
+#area {
+    padding: 2px;
+    /* border: 2px solid black;
+    border-radius: 25px; */
+}
+
+#component {
+    padding: 2px;
+    /* border: 2px solid black;
+    border-radius: 25px; */
+}
+.properties {
+    padding: 5px;
+}
+
+.properties td {
+    padding: 5px;;
+}
+
+.properties thead {
+    font-weight: bold;
+    background: lightgrey;
+}
+
+.properties label {
+    font-style: italic;
+}
+
+h1, h2, h3 {
+    padding: 2px;
+}

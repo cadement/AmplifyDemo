@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.sharecare</groupId>
     <artifactId>AmplifyDemo</artifactId>
     <name>AmplifyDemo (parent pom)</name>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>webapp</module>
-        <module>application</module>
-        <module>util</module>
+        <module>web</module>
+        <module>app</module>
     </modules>
 
     <properties>
@@ -20,9 +21,10 @@
         <jsp-api.version>2.1</jsp-api.version>
         <spring.version>3.2.6.RELEASE</spring.version>
         <magnoliaVersion>5.2</magnoliaVersion>
-        <magnolia-demo-project.version>2.7.1</magnolia-demo-project.version>
-        <magnolia-module-categorization.version>2.1</magnolia-module-categorization.version>
+        <magnolia-module-blossom.version>3.0</magnolia-module-blossom.version>
         <jcr.version>2.0</jcr.version>
+        <hsqldb.version>1.8.0.10</hsqldb.version>
+        <spring-security.version>3.2.0.RELEASE</spring-security.version>
     </properties>
 
     <!-- Fill the following in, so you can use the release plugin -->
@@ -35,17 +37,6 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.sharecare</groupId>
-                <artifactId>util</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.sharecare</groupId>
-                <artifactId>application</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-webmvc</artifactId>
                 <version>${spring.version}</version>
@@ -54,6 +45,38 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-core</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-taglibs</artifactId>
+                <version>${spring-security.version}</version>
             </dependency>
 
             <dependency>
@@ -68,6 +91,31 @@
                 <artifactId>magnolia-core</artifactId>
                 <version>${magnoliaVersion}</version>
             </dependency>
+            <dependency>
+                <groupId>info.magnolia</groupId>
+                <artifactId>magnolia-jaas</artifactId>
+                <version>${magnoliaVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.magnolia.activation</groupId>
+                <artifactId>magnolia-module-activation</artifactId>
+                <version>${magnoliaVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.magnolia</groupId>
+                <artifactId>magnolia-templating</artifactId>
+                <version>${magnoliaVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.magnolia</groupId>
+                <artifactId>magnolia-templating-jsp</artifactId>
+                <version>${magnoliaVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>info.magnolia.blossom</groupId>
+                <artifactId>magnolia-module-blossom</artifactId>
+                <version>${magnolia-module-blossom.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>javax.jcr</groupId>
@@ -76,24 +124,9 @@
             </dependency>
 
             <dependency>
-                <groupId>info.magnolia</groupId>
-                <artifactId>magnolia-demo-project</artifactId>
-                <version>${magnolia-demo-project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>info.magnolia</groupId>
-                <artifactId>magnolia-module-standard-templating-kit</artifactId>
-                <version>${magnolia-demo-project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>info.magnolia</groupId>
-                <artifactId>magnolia-theme-pop</artifactId>
-                <version>${magnolia-demo-project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>info.magnolia</groupId>
-                <artifactId>magnolia-module-categorization</artifactId>
-                <version>${magnolia-module-categorization.version}</version>
+                <groupId>hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <version>${hsqldb.version}</version>
             </dependency>
 
             <!-- javax.servlet stuff -->
@@ -132,6 +165,18 @@
                     <target>${javaVersion}</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.atlassian.maven.plugins</groupId>
+                <artifactId>maven-jgitflow-plugin</artifactId>
+                <version>1.0-alpha26</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <flowInitContext>
+                        <masterBranchName>master</masterBranchName>
+                        <developBranchName>develop</developBranchName>
+                    </flowInitContext>
+                </configuration>
+            </plugin>
         </plugins>
 
         <!-- default resources configuration which will filter your module descriptors -->
@@ -160,16 +205,6 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
-        <!-- IF YOU NEED MODULES FROM THE ENTERPRISE VERSION, UNCOMMENT THE FOLLOWING REPOSITORY -->
-        <!--
-        <repository>
-          <id>magnolia.enterprise.releases</id>
-          <url>http://nexus.magnolia-cms.com/content/repositories/magnolia.enterprise.releases</url>
-          <snapshots>
-            <enabled>false</enabled>
-          </snapshots>
-        </repository>
-        -->
         <repository>
             <id>vaadin-addons</id>
             <url>http://maven.vaadin.com/vaadin-addons</url>

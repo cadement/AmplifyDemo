@@ -1,0 +1,62 @@
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" sv:name="home">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:page</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:template" sv:type="String">
+        <sv:value>app:pages/one-column</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:activationStatus" sv:type="Boolean">
+        <sv:value>true</sv:value>
+    </sv:property>
+
+    <sv:node sv:name="main-column">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:area</sv:value>
+        </sv:property>
+        <sv:node sv:name="0">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+                <sv:value>mgnl:component</sv:value>
+            </sv:property>
+            <sv:property sv:name="mgnl:template" sv:type="String">
+                <sv:value>app:components/formattedText</sv:value>
+            </sv:property>
+            <sv:property sv:name="body" sv:type="String">
+                <sv:value>
+                    <![CDATA[<p>Here you will find examples of the various ways that Sharecare combines Magnolia CMS and Spring Framework. &nbsp;Examples include:</p> <ul> <li>Spring MVC invoking Magnolia views</li> <li>Spring MVC passing database objects to Magnolia views</li> <li>Blossom components merging data from the JCR and an external database</li> <li>Magnolia synchronizing&nbsp;data between the JCR and an external&nbsp;database</li> <li>Seamless interoperation between Spring Security and Magnolia</li> <li>Akamai page-fragment caching using Spring MVC and Blossom</li> </ul>]]>
+                </sv:value>
+            </sv:property>
+        </sv:node>
+        <sv:node sv:name="00">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+                <sv:value>mgnl:component</sv:value>
+            </sv:property>
+            <sv:property sv:name="mgnl:template" sv:type="String">
+                <sv:value>app:components/formattedText</sv:value>
+            </sv:property>
+            <sv:property sv:name="title" sv:type="String">
+                <sv:value>What can I do with this sample?</sv:value>
+            </sv:property>
+            <sv:property sv:name="body" sv:type="String">
+                <sv:value>
+                    <![CDATA[<p>This demo application is made available under the GNU General Public License v3.0 (just like Magnolia CMS Community Edition) and you are free to use any of the code in this application pursuant to those terms. &nbsp;Here&#39;s the obligatory legal boilerplate:</p> <p><em>Copyright (C) 2014 Sharecare, Inc.</em></p> <p><em>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</em></p>]]>
+                </sv:value>
+            </sv:property>
+        </sv:node>
+        <sv:node sv:name="01">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+                <sv:value>mgnl:component</sv:value>
+            </sv:property>
+            <sv:property sv:name="mgnl:template" sv:type="String">
+                <sv:value>app:components/formattedText</sv:value>
+            </sv:property>
+            <sv:property sv:name="title" sv:type="String">
+                <sv:value>What should I do next?</sv:value>
+            </sv:property>
+            <sv:property sv:name="body" sv:type="String">
+                <sv:value>
+                    <![CDATA[<p>From here you should explore articles on the site:</p> <p><a href="/articles">/articles</a></p> <p>Or click on your username in the top left corner to browse your profile page.</p>]]>
+                </sv:value>
+            </sv:property>
+        </sv:node>
+    </sv:node>
+</sv:node>

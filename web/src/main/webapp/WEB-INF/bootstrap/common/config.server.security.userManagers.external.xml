@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node sv:name="external" xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>mgnl:contentNode</sv:value>
+  </sv:property>
+  <sv:property sv:name="jcr:mixinTypes" sv:type="Name" sv:multiple="true">
+    <sv:value>mix:lockable</sv:value>
+  </sv:property>
+  <sv:property sv:name="class" sv:type="String">
+    <sv:value>com.sharecare.sample.auth.magnolia.SpringUserMananger</sv:value>
+  </sv:property>
+  <sv:property sv:name="realmName" sv:type="String">
+    <sv:value>external</sv:value>
+  </sv:property>
+</sv:node>

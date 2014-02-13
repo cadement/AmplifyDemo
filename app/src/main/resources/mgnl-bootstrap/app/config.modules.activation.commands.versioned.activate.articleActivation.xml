@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node sv:name="articleActivation" xmlns:sv="http://www.jcp.org/jcr/sv/1.0">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="class" sv:type="String">
+        <sv:value>com.sharecare.sample.model.article.activation.ArticleActivationCommand</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="Boolean">
+        <sv:value>true</sv:value>
+    </sv:property>
+
+    <!--<sv:property sv:name="jcr:mixinTypes" sv:type="Name" sv:multiple="true">-->
+        <!--<sv:value>mix:lockable</sv:value>-->
+    <!--</sv:property>-->
+
+    <!--<sv:node sv:name="MetaData">-->
+        <!--<sv:property sv:name="jcr:primaryType" sv:type="Name">-->
+            <!--<sv:value>mgnl:metaData</sv:value>-->
+        <!--</sv:property>-->
+        <!--<sv:property sv:name="jcr:createdBy" sv:type="String">-->
+            <!--<sv:value>admin</sv:value>-->
+        <!--</sv:property>-->
+        <!--<sv:property sv:name="mgnl:authorid" sv:type="String">-->
+            <!--<sv:value>superuser</sv:value>-->
+        <!--</sv:property>-->
+        <!--<sv:property sv:name="mgnl:creationdate" sv:type="Date">-->
+            <!--<sv:value>2013-06-18T14:06:16.359-04:00</sv:value>-->
+        <!--</sv:property>-->
+        <!--<sv:property sv:name="mgnl:lastmodified" sv:type="Date">-->
+            <!--<sv:value>2013-06-21T13:03:54.242-04:00</sv:value>-->
+        <!--</sv:property>-->
+    <!--</sv:node>-->
+</sv:node>
