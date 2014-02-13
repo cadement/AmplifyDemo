@@ -10,19 +10,23 @@ import org.springframework.stereotype.Repository;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import static java.util.Collections.singletonMap;
 
 @Repository
 public class UserRepository {
 
+    private static final RowMapper<User> USER_MAPPER = new UserMapper();
+
+    private final NamedParameterJdbcTemplate db;
+
     @Value("${user.create}") private String createQuery;
     @Value("${user.read}") private   String readQuery;
     @Value("${user.update}") private String updateQuery;
     @Value("${user.delete}") private String deleteQuery;
     @Value("${user.byName}") private String byNameQuery;
-
-    private final NamedParameterJdbcTemplate db;
+    @Value("${user.all}") private    String byAllQuery;
 
     @Autowired
     public UserRepository(DataSource dataSource) throws SQLException {
@@ -34,7 +38,7 @@ public class UserRepository {
     }
 
     public User readUser(String url) {
-        return db.queryForObject(readQuery, singletonMap("url", url), new UserAssembler());
+        return db.queryForObject(readQuery, singletonMap("url", url), USER_MAPPER);
     }
 
     public void updateUser(User user) {
@@ -46,10 +50,14 @@ public class UserRepository {
     }
 
     public User findByName(String name) {
-        return db.queryForObject(byNameQuery, singletonMap("name", name), new UserAssembler());
+        return db.queryForObject(byNameQuery, singletonMap("name", name), USER_MAPPER);
     }
 
-    public static class UserAssembler implements RowMapper<User> {
+    public List<User> findAllUsers(int limit) {
+        return db.query(byAllQuery, singletonMap("limit", limit), USER_MAPPER);
+    }
+
+    public static class UserMapper implements RowMapper<User> {
         @Override
         public User mapRow(ResultSet rs, int rowNum) throws SQLException {
             return new User(
@@ -58,6 +66,8 @@ public class UserRepository {
                     rs.getString("name"),
                     rs.getString("email"),
                     rs.getString("address"),
+                    rs.getBoolean("admin"),
+                    rs.getTimestamp("lastUpdated"),
                     rs.getTimestamp("lastLogin")
             );
         }

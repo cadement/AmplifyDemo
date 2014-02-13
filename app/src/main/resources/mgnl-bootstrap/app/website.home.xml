@@ -22,7 +22,17 @@
             </sv:property>
             <sv:property sv:name="body" sv:type="String">
                 <sv:value>
-                    <![CDATA[<p>Here you will find examples of the various ways that Sharecare combines Magnolia CMS and Spring Framework. &nbsp;Examples include:</p> <ul> <li>Spring MVC invoking Magnolia views</li> <li>Spring MVC passing database objects to Magnolia views</li> <li>Blossom components merging data from the JCR and an external database</li> <li>Magnolia synchronizing&nbsp;data between the JCR and an external&nbsp;database</li> <li>Seamless interoperation between Spring Security and Magnolia</li> <li>Akamai page-fragment caching using Spring MVC and Blossom</li> </ul>]]>
+                    <![CDATA[
+                    <p>Here you will find examples of the various ways that Sharecare combines Magnolia CMS and Spring Framework. &nbsp;Examples include:</p>
+                    <ul>
+                      <li>Spring MVC invoking Magnolia views</li>
+                      <li>Spring MVC passing database objects to Magnolia views</li>
+                      <li>Blossom components merging data from the JCR and an external database</li>
+                      <li>Magnolia synchronizing data between the JCR and an external database</li>
+                      <li>Seamless interoperation between Spring Security and Magnolia</li>
+                      <li>Akamai page-fragment caching using Spring MVC and Blossom</li>
+                    </ul>
+                    ]]>
                 </sv:value>
             </sv:property>
         </sv:node>
@@ -38,7 +48,11 @@
             </sv:property>
             <sv:property sv:name="body" sv:type="String">
                 <sv:value>
-                    <![CDATA[<p>This demo application is made available under the GNU General Public License v3.0 (just like Magnolia CMS Community Edition) and you are free to use any of the code in this application pursuant to those terms. &nbsp;Here&#39;s the obligatory legal boilerplate:</p> <p><em>Copyright (C) 2014 Sharecare, Inc.</em></p> <p><em>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</em></p>]]>
+                    <![CDATA[
+                    <p>This demo application is made available under the GNU General Public License v3.0 (just like Magnolia CMS Community Edition) and you are free to use any of the code in this application pursuant to those terms. &nbsp;Here&#39;s the obligatory legal boilerplate:</p>
+                    <p><em>Copyright (C) 2014 Sharecare, Inc.</em></p>
+                    <p><em>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</em></p>
+                    ]]>
                 </sv:value>
             </sv:property>
         </sv:node>
@@ -54,7 +68,15 @@
             </sv:property>
             <sv:property sv:name="body" sv:type="String">
                 <sv:value>
-                    <![CDATA[<p>From here you should explore articles on the site:</p> <p><a href="/articles">/articles</a></p> <p>Or click on your username in the top left corner to browse your profile page.</p>]]>
+                    <![CDATA[
+                    <p>From here you should:</p>
+                    <ul>
+                      <li>Explore articles on the site: <a href="/articles">/articles</a></li>
+                      <li>Explore users on the site: <a href="/users">/users</a></li>
+                      <li>Click on your username in the top left corner to browse your profile page</li>
+                      <li>Go to <a href="/.magnolia/admincentral">AdminCentral</a> and explore the page mappings and configuration</li>
+                    </ul>
+                    ]]>
                 </sv:value>
             </sv:property>
         </sv:node>

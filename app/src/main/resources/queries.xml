@@ -5,17 +5,17 @@
 
     <!-- User queries -->
     <entry key="user.create">
-        INSERT INTO User(url, password, name, email, address, lastLogin)
-        VALUES(:url, :password, :name, :email, :address, :lastLogin)
+        INSERT INTO User(url, password, name, email, address, admin, lastUpdated, lastLogin)
+        VALUES(:url, :password, :name, :email, :address, :admin, :lastUpdated, :lastLogin)
     </entry>
     <entry key="user.read">
-        SELECT url, password, name, email, address, lastLogin
+        SELECT url, password, name, email, address, admin, lastUpdated, lastLogin
         FROM User
         WHERE url=:url
     </entry>
     <entry key="user.update">
         UPDATE User
-        SET password=:password, name=:name, email=:email, address=:address, lastLogin=:lastLogin
+        SET password=:password, name=:name, email=:email, address=:address, admin=:admin, lastUpdated=:lastUpdated, lastLogin=:lastLogin
         WHERE url=:url
     </entry>
     <entry key="user.delete">
@@ -23,10 +23,16 @@
         WHERE url=:url
     </entry>
     <entry key="user.byName">
-        SELECT url, password, name, email, address, lastLogin
+        SELECT url, password, name, email, address, admin, lastUpdated, lastLogin
         FROM User
         WHERE name=:name
         LIMIT 1
+    </entry>
+    <entry key="user.all">
+        SELECT url, password, name, email, address, admin, lastUpdated, lastLogin
+        FROM User
+        ORDER BY name ASC
+        LIMIT :limit
     </entry>
 
     <!-- Article queries -->

@@ -21,7 +21,7 @@ public class AllArticlesComponent {
     private ArticleRepository articleRepository;
 
     @ModelAttribute("articles")
-    public List<Article> resolveUser() {
+    public List<Article> resolveArticles() {
         return articleRepository.findArticles(20);
     }
 

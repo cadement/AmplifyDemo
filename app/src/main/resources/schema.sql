@@ -1,12 +1,14 @@
 DROP TABLE IF EXISTS User;
 
 CREATE TABLE User (
-  url       VARCHAR(50),
-  password  VARCHAR(15),
-  name      VARCHAR(50),
-  email     VARCHAR(100),
-  address   VARCHAR(100),
-  lastLogin TIMESTAMP
+  url         VARCHAR(50),
+  password    VARCHAR(15),
+  name        VARCHAR(50),
+  email       VARCHAR(100),
+  address     VARCHAR(100),
+  admin       BOOLEAN,
+  lastUpdated TIMESTAMP,
+  lastLogin   TIMESTAMP
 );
 
 DROP TABLE IF EXISTS Article;

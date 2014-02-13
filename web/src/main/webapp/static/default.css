@@ -19,6 +19,25 @@ body, html {
     padding:5px 10px;
 }
 
+#header {
+    width: 980px;
+    height: 40px;
+    color: white;
+    background: steelblue;
+    padding:5px 10px;
+}
+
+#breadcrumb {
+    width: 980px;
+    height: 25px;
+    background: white;
+    padding:5px 10px;
+}
+
+#breadcrumb a {
+    text-decoration: none;
+}
+
 #header h2 {
     float: left;
     margin: 5px;
@@ -46,6 +65,26 @@ body, html {
     color: white;
 }
 
+#breadcrumbs {
+    padding:10px;
+}
+#breadcrumbs a {
+    text-decoration: none;
+}
+#breadcrumbs a:link {
+    color: black;
+}
+#breadcrumbs a:visited {
+    color: black;
+}
+#breadcrumbs a:hover {
+    color: black;
+}
+#breadcrumbs a:active {
+    color: black;
+}
+
+
 .column {
     padding:10px;
 }
@@ -58,7 +97,7 @@ body, html {
 }
 
 #footer p {
-    margin:0;
+    margin:0px;
 }
 
 * html #footer {
@@ -93,6 +132,11 @@ body, html {
     font-style: italic;
 }
 
-h1, h2, h3 {
+h1 {
+    padding: 2px;
+    margin: 0px;
+}
+
+h2, h3 {
     padding: 2px;
 }

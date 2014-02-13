@@ -1,4 +1,4 @@
-<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" sv:name="articles">
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" sv:name="edit">
     <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>mgnl:page</sv:value>
     </sv:property>
@@ -18,8 +18,9 @@
                 <sv:value>mgnl:component</sv:value>
             </sv:property>
             <sv:property sv:name="mgnl:template" sv:type="String">
-                <sv:value>app:components/all-articles</sv:value>
+                <sv:value>app:components/edit-user-profile</sv:value>
             </sv:property>
         </sv:node>
     </sv:node>
+
 </sv:node>
