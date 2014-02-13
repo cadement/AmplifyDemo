@@ -21,9 +21,9 @@ public class ModelFixture {
         }
     }
 
-    static final User USER1 = new User("user-1", "pw1", "User 1", "user1@sharecare.com", "Atlanta, GA", null);
-    static final User USER2 = new User("user-2", "pw2", "User 2", "user2@sharecare.com", "Atlanta, GA", null);
-    static final User USER3 = new User("user-3", "pw3", "User 3", "user3@sharecare.com", "Atlanta, GA", null);
+    static final User USER1 = new User("user-1", "pw1", "User 1", "user1@sharecare.com", "Atlanta, GA", false, null, null);
+    static final User USER2 = new User("user-2", "pw2", "User 2", "user2@sharecare.com", "Atlanta, GA", false, null, null);
+    static final User USER3 = new User("user-3", "pw3", "User 3", "user3@sharecare.com", "Atlanta, GA", false, null, null);
 
     static final Article ARTICLE1 = new Article("article-1", "Title 1", "Category 1", GET_TIMESTAMP("2001-01-01 00:00:00"));
     static final Article ARTICLE2 = new Article("article-2", "Title 2", "Category 1", GET_TIMESTAMP("2002-01-02 00:00:00"));

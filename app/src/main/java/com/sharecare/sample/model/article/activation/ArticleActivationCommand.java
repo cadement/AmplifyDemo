@@ -11,6 +11,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Component;
 
 import javax.jcr.Node;
+import javax.jcr.NodeIterator;
 import java.sql.Timestamp;
 
 @Component
@@ -26,34 +27,39 @@ public class ArticleActivationCommand extends BaseActivationCommand implements A
     @Override
     public boolean execute(Context context) throws Exception {
         if (getPath().startsWith("/articles/")) {
-            Node node = getJCRNode(context);
-
-            Article article = null;
-            try {
-                article = ARTICLE_REPOSITORY.readArticle(node.getName());
-                article.setPublished(new Timestamp(System.currentTimeMillis()));
-                try {
-                    ARTICLE_REPOSITORY.updateArticle(article);
-                } catch (DataAccessException e) {
-                    e.printStackTrace();
-                    return false;
-                }
-            } catch (DataAccessException ignore) {
-                article = new Article(
-                        node.getName(),
-                        node.getNode("main-column").getNode("0").getProperty("title").getValue().getString(),
-                        node.getNode("main-column").getNode("0").getProperty("category").getValue().getString(),
-                        new Timestamp(System.currentTimeMillis())
-                );
-                try {
-                    ARTICLE_REPOSITORY.createArticle(article);
-                } catch (DataAccessException e) {
-                    e.printStackTrace();
-                    return false;
-                }
-            }
+            publishArticle(getJCRNode(context));
+        } else if (getPath().startsWith("/articles") && ((Boolean) context.get("recursive"))) {
+            publishArticles(getJCRNode(context));
         }
 
         return true;
+    }
+
+    private void publishArticles(Node articlesNode) throws Exception {
+        Node articleNode;
+        NodeIterator iterator = articlesNode.getNodes();
+        while (iterator.hasNext()) {
+            articleNode = iterator.nextNode();
+            if ("mgnl:page".equals(articleNode.getPrimaryNodeType().getName())) {
+                publishArticle(articleNode);
+            }
+        }
+    }
+
+    private void publishArticle(Node articleNode) throws Exception {
+        Article article = null;
+        try {
+            article = ARTICLE_REPOSITORY.readArticle(articleNode.getName());
+            article.setPublished(new Timestamp(System.currentTimeMillis()));
+            ARTICLE_REPOSITORY.updateArticle(article);
+        } catch (DataAccessException ignore) {
+            article = new Article(
+                    articleNode.getName(),
+                    articleNode.getNode("main-column").getNode("0").getProperty("title").getValue().getString(),
+                    articleNode.getNode("main-column").getNode("0").getProperty("category").getValue().getString(),
+                    new Timestamp(System.currentTimeMillis())
+            );
+            ARTICLE_REPOSITORY.createArticle(article);
+        }
     }
 }

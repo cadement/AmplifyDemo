@@ -1,4 +1,4 @@
-<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" sv:name="user-profile">
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" sv:name="private-profile">
     <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>mgnl:page</sv:value>
     </sv:property>

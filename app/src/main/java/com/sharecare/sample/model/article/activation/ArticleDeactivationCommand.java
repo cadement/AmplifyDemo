@@ -12,6 +12,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Component;
 
 import javax.jcr.Node;
+import javax.jcr.NodeIterator;
 
 @Component
 public class ArticleDeactivationCommand extends BaseActivationCommand implements ApplicationContextAware {
@@ -28,17 +29,31 @@ public class ArticleDeactivationCommand extends BaseActivationCommand implements
     @Override
     public boolean execute(Context context) throws Exception {
         if (getPath().startsWith("/articles/")) {
-
-            Node node = getJCRNode(context);
-
-            try {
-                Article article = ARTICLE_REPOSITORY.readArticle(node.getName());
-                ARTICLE_REPOSITORY.deleteArticle(article);
-                READ_ARTICLE_REPOSITORY.deleteReferencesTo(article);
-            } catch (DataAccessException ignore) {
-            }
+            unpublishArticle(getJCRNode(context));
+        } else if (getPath().startsWith("/articles")) {
+            unpublishArticles(getJCRNode(context));
         }
 
         return true;
+    }
+
+    private void unpublishArticles(Node articlesNode) throws Exception {
+        Node articleNode;
+        NodeIterator iterator = articlesNode.getNodes();
+        while (iterator.hasNext()) {
+            articleNode = iterator.nextNode();
+            if ("mgnl:page".equals(articleNode.getPrimaryNodeType().getName())) {
+                unpublishArticle(articleNode);
+            }
+        }
+    }
+
+    private void unpublishArticle(Node node) throws Exception {
+        try {
+            Article article = ARTICLE_REPOSITORY.readArticle(node.getName());
+            ARTICLE_REPOSITORY.deleteArticle(article);
+            READ_ARTICLE_REPOSITORY.deleteReferencesTo(article);
+        } catch (DataAccessException ignore) {
+        }
     }
 }

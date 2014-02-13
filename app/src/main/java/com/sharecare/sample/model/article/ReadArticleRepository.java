@@ -20,20 +20,16 @@ import static java.util.Collections.singletonMap;
 @Repository
 public class ReadArticleRepository {
 
+    private static final RowMapper<ReadArticle> READ_ARTICLE_MAPPER = new ReadArticleMapper();
+
+    private final NamedParameterJdbcTemplate db;
+
     @Value("${readarticle.create}") private        String createQuery;
     @Value("${readarticle.read}") private          String readQuery;
     @Value("${readarticle.update}") private        String updateQuery;
     @Value("${readarticle.delete}") private        String deleteQuery;
     @Value("${readarticle.readBy}") private        String readByQuery;
     @Value("${readarticle.deleteArticle}") private String deleteArticleQuery;
-
-    private final NamedParameterJdbcTemplate db;
-    private final RowMapper<ReadArticle> readArticleRowMapper = new RowMapper<ReadArticle>() {
-        @Override
-        public ReadArticle mapRow(ResultSet rs, int rowNum) throws SQLException {
-            return new ReadArticle(rs.getString("userUrl"), rs.getString("articleUrl"), rs.getTimestamp("readOn"));
-        }
-    };
 
     @Autowired
     public ReadArticleRepository(DataSource dataSource) throws SQLException {
@@ -48,7 +44,7 @@ public class ReadArticleRepository {
         Map<String, Object> queryParams = new HashMap<String, Object>(2);
         queryParams.put("userUrl", user.getUrl());
         queryParams.put("articleUrl", article.getUrl());
-        return db.queryForObject(readQuery, queryParams, readArticleRowMapper);
+        return db.queryForObject(readQuery, queryParams, READ_ARTICLE_MAPPER);
     }
 
     public void updateReadArticle(ReadArticle readArticle) {
@@ -63,10 +59,17 @@ public class ReadArticleRepository {
         Map<String, Object> queryParams = new HashMap<String, Object>(2);
         queryParams.put("userUrl", readBy.getUrl());
         queryParams.put("limit", limit);
-        return db.query(readByQuery, queryParams, readArticleRowMapper);
+        return db.query(readByQuery, queryParams, READ_ARTICLE_MAPPER);
     }
 
     public void deleteReferencesTo(Article article) {
         db.update(deleteArticleQuery, singletonMap("articleUrl", article.getUrl()));
+    }
+
+    private static class ReadArticleMapper implements RowMapper<ReadArticle> {
+        @Override
+        public ReadArticle mapRow(ResultSet rs, int rowNum) throws SQLException {
+            return new ReadArticle(rs.getString("userUrl"), rs.getString("articleUrl"), rs.getTimestamp("readOn"));
+        }
     }
 }

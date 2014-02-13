@@ -20,26 +20,17 @@ import static java.util.Collections.singletonMap;
 @Repository
 public class ArticleRepository {
 
-    @Value("${article.create}") private    String createQuery;
-    @Value("${article.read}") private      String readQuery;
-    @Value("${article.update}") private    String updateQuery;
-    @Value("${article.delete}") private    String deleteQuery;
-    @Value("${article.unread}") private    String byPublishedQuery;
-    @Value("${article.byCategory}") private String byCategoryQuery;
-    @Value("${article.all}") private       String byAllQuery;
+    private static final RowMapper<Article> ARTICLE_MAPPER = new ArticleMapper();
 
     private final NamedParameterJdbcTemplate db;
-    private final RowMapper<Article> articleRowMapper = new RowMapper<Article>() {
-        @Override
-        public Article mapRow(ResultSet rs, int rowNum) throws SQLException {
-            return new Article(
-                    rs.getString("url"),
-                    rs.getString("title"),
-                    rs.getString("category"),
-                    rs.getTimestamp("published")
-            );
-        }
-    };
+
+    @Value("${article.create}") private     String createQuery;
+    @Value("${article.read}") private       String readQuery;
+    @Value("${article.update}") private     String updateQuery;
+    @Value("${article.delete}") private     String deleteQuery;
+    @Value("${article.unread}") private     String byPublishedQuery;
+    @Value("${article.byCategory}") private String byCategoryQuery;
+    @Value("${article.all}") private        String byAllQuery;
 
     @Autowired
     public ArticleRepository(DataSource dataSource) throws SQLException {
@@ -51,7 +42,7 @@ public class ArticleRepository {
     }
 
     public Article readArticle(String url) {
-        return db.queryForObject(readQuery, singletonMap("url", url), articleRowMapper);
+        return db.queryForObject(readQuery, singletonMap("url", url), ARTICLE_MAPPER);
     }
 
     public void updateArticle(Article article) {
@@ -66,17 +57,29 @@ public class ArticleRepository {
         Map<String, Object> queryParams = new HashMap<String, Object>(2);
         queryParams.put("userUrl", unreadBy.getUrl());
         queryParams.put("limit", limit);
-        return db.query(byPublishedQuery, queryParams, articleRowMapper);
+        return db.query(byPublishedQuery, queryParams, ARTICLE_MAPPER);
     }
 
     public List<Article> findArticlesInCategory(String category, Integer limit) {
         Map<String, Object> queryParams = new HashMap<String, Object>(2);
         queryParams.put("category", category);
         queryParams.put("limit", limit);
-        return db.query(byCategoryQuery, queryParams, articleRowMapper);
+        return db.query(byCategoryQuery, queryParams, ARTICLE_MAPPER);
     }
 
     public List<Article> findArticles(int limit) {
-        return db.query(byAllQuery, singletonMap("limit", limit), articleRowMapper);
+        return db.query(byAllQuery, singletonMap("limit", limit), ARTICLE_MAPPER);
+    }
+
+    private static class ArticleMapper implements RowMapper<Article> {
+        @Override
+        public Article mapRow(ResultSet rs, int rowNum) throws SQLException {
+            return new Article(
+                    rs.getString("url"),
+                    rs.getString("title"),
+                    rs.getString("category"),
+                    rs.getTimestamp("published")
+            );
+        }
     }
 }

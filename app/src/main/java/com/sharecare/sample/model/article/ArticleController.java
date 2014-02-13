@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.Timestamp;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/articles")
@@ -28,6 +31,7 @@ public class ArticleController {
     public ModelAndView getArticles() {
         ModelAndView modelAndView = new ModelAndView("/articles.html");
         modelAndView.addObject("title", "Articles");
+        modelAndView.addObject("breadcrumbs", Collections.<String, String>singletonMap("/", "Home"));
         return modelAndView;
     }
 
@@ -55,6 +59,12 @@ public class ArticleController {
         ModelAndView modelAndView = new ModelAndView("/articles/" + article.getUrl() + ".html");
         modelAndView.addObject("title", article.getTitle());
         modelAndView.addObject("article", article);
+
+        Map<String, String> breadcrumbs = new LinkedHashMap<String, String>();
+        breadcrumbs.put("/", "Home");
+        breadcrumbs.put("/articles", "Articles");
+        modelAndView.addObject("breadcrumbs", breadcrumbs);
+
         return modelAndView;
     }
 }

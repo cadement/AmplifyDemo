@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
-@Template(id = "app:components/user-profile", title = "User Profile")
+@Template(id = "app:components/create-user-profile", title = "Create User Profile")
 @StandardComponent
 @Controller
-public class UserProfileComponent {
+public class CreateUserProfileComponent {
 
     @ModelAttribute("user")
     public User resolveUser(HttpServletRequest request) {
@@ -22,13 +22,13 @@ public class UserProfileComponent {
         return (null != userObj) ? (User) userObj : User.DUMMY_USER();
     }
 
-    @RequestMapping("/user-profile")
+    @RequestMapping("/create-user-profile")
     public String render(
             @ModelAttribute("user") User user,
             Model model,
             SpringAuthentication authentication
     ) {
         model.addAttribute("user", user);
-        return "app/component/user/profile.jsp";
+        return "app/component/user/create.jsp";
     }
 }
