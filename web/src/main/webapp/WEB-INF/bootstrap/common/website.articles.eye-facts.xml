@@ -1,0 +1,34 @@
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" sv:name="eye-facts">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:page</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:template" sv:type="String">
+        <sv:value>app:pages/one-column</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:activationStatus" sv:type="Boolean">
+        <sv:value>true</sv:value>
+    </sv:property>
+
+    <sv:node sv:name="main-column">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:area</sv:value>
+        </sv:property>
+        <sv:node sv:name="0">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+                <sv:value>mgnl:component</sv:value>
+            </sv:property>
+            <sv:property sv:name="mgnl:template" sv:type="String">
+                <sv:value>app:components/article</sv:value>
+            </sv:property>
+            <sv:property sv:name="title" sv:type="String">
+                <sv:value>6 Surprising Eye Health Myths</sv:value>
+            </sv:property>
+            <sv:property sv:name="category" sv:type="String">
+                <sv:value>3c03</sv:value>
+            </sv:property>
+            <sv:property sv:name="body" sv:type="String">
+                <sv:value>&lt;p&gt;Parents ever tell you that eating carrots would save you from wearing glasses? Or that sitting too close to the TV could make you go blind? Their advice may sound rather mixed to you as an adult. But what exactly &lt;em&gt;is&lt;/em&gt; good or bad for your eyes? Read on to find out whether any of the offbeat stuff you've heard is truly legitimate or the stuff of urban eye-health legends.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Myth:&lt;/strong&gt; &lt;em&gt;Eating carrots will improve your vision.&lt;/em&gt;&lt;br /&gt; &lt;strong&gt;The truth:&lt;/strong&gt; No studies to date show that your eyesight will get sharper just by eating more carrots. Carrots do, however, contain vitamin A -- a nutrient your eyes need to function properly -- so a deficiency would be bad news for your eyes. Keep the rabbit food on the menu. Just don't bother with vitamin A supplements, because your body doesn't need a ton of the stuff, and getting more than you need of the supplement form can be harmful to your health. &lt;strong&gt;&lt;a href="http://www.sharecare.com/question/sources-of-vitamin-a"&gt;Use this tool to find the best food sources of vitamin A&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Myth:&lt;/strong&gt; &lt;em&gt;Working on a computer is bad for your eyes.&lt;/em&gt;&lt;br /&gt; &lt;strong&gt;The truth:&lt;/strong&gt; Computer eyestrain has less to do with computers and more to do with the way you work on them. Most of us forget to blink and take breaks as often as we should while working or reading, so all that time spent staring at the screen can make eyes tired and dry. It might even give you a headache. But it won't damage your eyes, especially if you treat your eyes right while working. &lt;strong&gt;&lt;a href="http://www.sharecare.com/health/eye-vision-health/article/protect-your-eyes-from-computer-eyestrain"&gt;Here are five ways to avoid eye fatigue on the computer&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Myth:&lt;/strong&gt; &lt;em&gt;Reading in dim light damages your eyes.&lt;/em&gt;&lt;br /&gt; &lt;strong&gt;The truth:&lt;/strong&gt; Reading or doing crossword puzzles in lower light won't hurt your eyes, but it is very likely to tire them out. That's the extent of the damage. Still, you should try to make things easier on your eyes and work in adequate lighting as much as possible.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Myth:&lt;/strong&gt; &lt;em&gt;If you wear glasses or contacts, your eyes will become dependent on them, and your vision will get worse.&lt;/em&gt;&lt;br /&gt; &lt;strong&gt;The truth:&lt;/strong&gt; Wearing glasses or contact lenses doesn't weaken your eyesight. It's things like aging, injury, disease, or genetic factors that make vision worse -- not using vision correction.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Myth:&lt;/strong&gt; &lt;em&gt;Sitting too close to the TV is bad for your eyes.&lt;/em&gt;&lt;br /&gt; &lt;strong&gt;The truth:&lt;/strong&gt; Just like when you stare at your computer screen too long, you might get a headache from sitting too close to your TV. But there is no proof that the close distance is damaging. Still, needing to sit closer to the TV might be a sign of nearsightedness, so you may need to have your vision checked. &lt;strong&gt;&lt;a href="http://www.sharecare.com/health/eye-vision-health/article/vision-screening"&gt;Refer to this vision screening schedule to see whether you need an eye exam&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Myth:&lt;/strong&gt; &lt;em&gt;Wearing the wrong eyeglasses is bad for your eyes.&lt;/em&gt;&lt;br /&gt; &lt;strong&gt;The truth:&lt;/strong&gt; Wearing the wrong prescription (like someone else's glasses) or not wearing glasses at all won't harm your eyes. But only wearing your correct prescription will give you optimal vision -- and who wouldn't want that?&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Ready to find out whether your vision changes are a normal part of aging or something more serious? &lt;a href="http://www.sharecare.com/health/eye-vision-health/article/aging-eye"&gt;Read this article&amp;nbsp;on aging eyes.&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</sv:value>
+            </sv:property>
+        </sv:node>
+    </sv:node>
+</sv:node>

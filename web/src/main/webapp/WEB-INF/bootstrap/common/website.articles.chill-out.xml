@@ -1,0 +1,34 @@
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" sv:name="chill-out">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:page</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:template" sv:type="String">
+        <sv:value>app:pages/one-column</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:activationStatus" sv:type="Boolean">
+        <sv:value>true</sv:value>
+    </sv:property>
+
+    <sv:node sv:name="main-column">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:area</sv:value>
+        </sv:property>
+        <sv:node sv:name="0">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+                <sv:value>mgnl:component</sv:value>
+            </sv:property>
+            <sv:property sv:name="mgnl:template" sv:type="String">
+                <sv:value>app:components/article</sv:value>
+            </sv:property>
+            <sv:property sv:name="title" sv:type="String">
+                <sv:value>Chill Out</sv:value>
+            </sv:property>
+            <sv:property sv:name="category" sv:type="String">
+                <sv:value>3f7a</sv:value>
+            </sv:property>
+            <sv:property sv:name="body" sv:type="String">
+                <sv:value>&lt;p&gt;Healthy&amp;quot; and &amp;quot;potato salad&amp;quot; &lt;em&gt;can&lt;/em&gt; go hand in hand.&lt;/p&gt; &lt;p&gt;Unfortunately, everyone's favorite summer side dish can send blood-sugar levels soaring, thanks to all the high-carb starch in spuds. Here's how to fix that: Boil the potatoes ahead of time and refrigerate overnight. The next day, make the dressing with vinegar and olive oil -- not mayo -- and mix with the potatoes. Both chilling and using vinegar neutralize starch's blood-sugar effects.&lt;/p&gt; &lt;p&gt;Potatoes -- along with doughnuts, ice cream, white bread, and many other starchy carbohydrates and highly processed foods -- have what's called a high glycemic index (GI). What's that, you ask? It's a measure of a specific food's effect on blood-sugar levels, which you want to remain stable, not dip and spike. High-glycemic carbs send blood sugar (glucose) surging. Your body reacts by pumping out lots of insulin, which lowers sugar levels.&lt;/p&gt; &lt;p&gt;Regularly eating a lot of high GI foods can lead to chronically high insulin levels and that, in turn, can lead to things you definitely don't want: heart disease and type 2 diabetes.&lt;/p&gt; &lt;p&gt;So nip the process in the bud. Focus on low GI foods, which are all supergood for you: fruits and veggies (fresh, dried, or frozen); whole-grain breads, pasta, and cereals; lentils and beans; nuts; and low-fat dairy foods. And don't forget: If you're whipping up potato salad, make it the day before -- and hold the mayo.&lt;/p&gt;</sv:value>
+            </sv:property>
+        </sv:node>
+    </sv:node>
+</sv:node>
