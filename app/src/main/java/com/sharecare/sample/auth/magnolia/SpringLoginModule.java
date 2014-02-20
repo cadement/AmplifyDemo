@@ -59,11 +59,11 @@ public class SpringLoginModule extends JCRAuthenticationModule implements Applic
         initUser();
 
         if (this.user == null) {
-            throw new AccountNotFoundException("User account " + this.name + " not found.");
+            throw new AccountNotFoundException(this.name + " not found.");
         }
 
         if (!this.user.isEnabled()) {
-            throw new AccountLockedException("User account " + this.name + " is locked.");
+            throw new AccountLockedException(this.name + " is locked.");
         }
 
         matchPassword();

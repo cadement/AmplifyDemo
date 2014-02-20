@@ -53,7 +53,10 @@ public class UserController {
     }
 
     @RequestMapping(value = "/{url}", method = RequestMethod.GET)
-    public ModelAndView getUserProfile(@PathVariable("url") String userUrl, SpringAuthentication authentication) {
+    public ModelAndView getUserProfile(
+            @PathVariable("url") String userUrl,
+            SpringAuthentication authentication
+    ) {
         User user = userRepository.readUser(userUrl);
 
         ModelAndView userProfilePage;
@@ -93,7 +96,10 @@ public class UserController {
     }
 
     @RequestMapping(value = "/{url}", method = RequestMethod.POST)
-    public String updateUserProfile(@PathVariable("url") String userUrl, UserDTO userUpdates) {
+    public String updateUserProfile(
+            @PathVariable("url") String userUrl,
+            UserDTO userUpdates
+    ) {
         User user = userAssembler.applyUpdates(userRepository.readUser(userUrl), userUpdates);
         userRepository.updateUser(user);
         return "redirect:/users/" + userUrl;

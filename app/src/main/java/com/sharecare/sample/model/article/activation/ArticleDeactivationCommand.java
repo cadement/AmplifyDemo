@@ -15,7 +15,9 @@ import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 
 @Component
-public class ArticleDeactivationCommand extends BaseActivationCommand implements ApplicationContextAware {
+public class ArticleDeactivationCommand
+        extends BaseActivationCommand
+        implements ApplicationContextAware {
 
     private static ArticleRepository     ARTICLE_REPOSITORY;
     private static ReadArticleRepository READ_ARTICLE_REPOSITORY;

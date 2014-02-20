@@ -33,7 +33,10 @@ public class SpringExternalUser extends ExternalUser {
 
     private final User serverUser;
 
-    private SpringExternalUser(User serverUser, Map<String, String> properties, GroupList groupList, RoleList roleList) {
+    private SpringExternalUser(User serverUser,
+                               Map<String, String> properties,
+                               GroupList groupList,
+                               RoleList roleList) {
         super(properties, groupList, roleList);
 
         this.serverUser = serverUser;

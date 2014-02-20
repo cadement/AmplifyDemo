@@ -60,7 +60,8 @@ public class ArticleComponent extends AbstractESIParagraphController {
 
     @Override
     protected Map<String, Object> getParameters(Model model) {
-        return Collections.<String, Object>singletonMap("url", ((Article) model.asMap().get("article")).getUrl());
+        Article article = ((Article) model.asMap().get("article"));
+        return Collections.<String, Object>singletonMap("url", article.getUrl());
     }
 
     @Override
