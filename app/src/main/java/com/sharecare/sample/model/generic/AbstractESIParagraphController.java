@@ -82,7 +82,10 @@ public abstract class AbstractESIParagraphController {
      * @return The ESI tag
      */
     @RequestMapping()
-    public String handleRequest(Content paragraph, Model model, HttpServletRequest request, HttpServletResponse response) {
+    public String handleRequest(Content paragraph,
+                                Model model,
+                                HttpServletRequest request,
+                                HttpServletResponse response) {
         String key;
 
         Enumeration iterator = request.getAttributeNames();

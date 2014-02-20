@@ -22,7 +22,10 @@ public class ArticleController {
     private final ReadArticleRepository readArticleRepository;
 
     @Autowired
-    public ArticleController(ArticleRepository articleRepository, ReadArticleRepository readArticleRepository) {
+    public ArticleController(
+            ArticleRepository articleRepository,
+            ReadArticleRepository readArticleRepository
+    ) {
         this.articleRepository = articleRepository;
         this.readArticleRepository = readArticleRepository;
     }
@@ -42,6 +45,24 @@ public class ArticleController {
     ) {
         Article article = articleRepository.readArticle(url);
 
+        setLastReadBy(authorization, article);
+
+        String viewPath = "/articles/" + article.getUrl() + ".html";
+        ModelAndView modelAndView = new ModelAndView(viewPath);
+
+        modelAndView.addObject("title", article.getTitle());
+
+        modelAndView.addObject("article", article);
+
+        Map<String, String> breadcrumbs = new LinkedHashMap<String, String>();
+        breadcrumbs.put("/", "Home");
+        breadcrumbs.put("/articles", "Articles");
+        modelAndView.addObject("breadcrumbs", breadcrumbs);
+
+        return modelAndView;
+    }
+
+    private void setLastReadBy(SpringAuthentication authorization, Article article) {
         try {
             ReadArticle readArticle = readArticleRepository.readReadArticle(authorization.getPrincipal(), article);
             readArticle.setReadOn(new Timestamp(System.currentTimeMillis()));
@@ -55,16 +76,5 @@ public class ArticleController {
                     )
             );
         }
-
-        ModelAndView modelAndView = new ModelAndView("/articles/" + article.getUrl() + ".html");
-        modelAndView.addObject("title", article.getTitle());
-        modelAndView.addObject("article", article);
-
-        Map<String, String> breadcrumbs = new LinkedHashMap<String, String>();
-        breadcrumbs.put("/", "Home");
-        breadcrumbs.put("/articles", "Articles");
-        modelAndView.addObject("breadcrumbs", breadcrumbs);
-
-        return modelAndView;
     }
 }

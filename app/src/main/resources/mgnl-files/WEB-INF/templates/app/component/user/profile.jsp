@@ -5,11 +5,15 @@
 <s:authentication property="principal.url" var="url"/>
 <s:authentication property="principal.admin" var="isAdmin"/>
 
-<jsp:useBean id="user" type="com.sharecare.sample.model.user.User" scope="request"/>
+<jsp:useBean id="user" 
+             type="com.sharecare.sample.model.user.User" 
+             scope="request"/>
 
 <div id="component" style="word-wrap: break-word;">
     <h3>Details
-        <c:if test="${isAdmin || (url eq user.url)}">&nbsp;(<a href="${user.url}?edit">Edit</a>)</c:if>
+        <c:if test="${isAdmin || (url eq user.url)}">
+            &nbsp;(<a href="${user.url}?edit">Edit</a>)
+        </c:if>
     </h3>
     <table class="properties">
         <thead>
