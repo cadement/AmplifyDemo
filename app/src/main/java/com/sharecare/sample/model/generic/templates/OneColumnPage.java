@@ -20,7 +20,7 @@ public class OneColumnPage {
             model.addAttribute("breadcrumbs", Collections.<String, String>emptyMap());
         }
         if (null == request.getAttribute("title")) {
-            model.addAttribute("title", "Page Title");
+            model.addAttribute("title", "");
         }
         return "app/page/one-column.jsp";
     }
