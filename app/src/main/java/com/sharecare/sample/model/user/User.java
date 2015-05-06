@@ -1,6 +1,8 @@
 package com.sharecare.sample.model.user;
 
-import java.sql.Timestamp;
+import org.springframework.data.annotation.Id;
+
+import java.util.Date;
 
 public class User {
 
@@ -8,16 +10,17 @@ public class User {
         return new User("anonymous", "", "Anonymous", "anonymous@sharecare.com", "Atlanta, GA", false, null, null);
     }
 
-    private String    url;
-    private String    password;
-    private String    name;
-    private String    email;
-    private String    address;
-    private Boolean   admin;
-    private Timestamp lastUpdated;
-    private Timestamp lastLogin;
+    @Id
+    private String  url;
+    private String  password;
+    private String  name;
+    private String  email;
+    private String  address;
+    private Boolean admin;
+    private Date    lastUpdated;
+    private Date    lastLogin;
 
-    public User(String url, String password, String name, String email, String address, Boolean admin, Timestamp lastUpdated, Timestamp lastLogin) {
+    public User(String url, String password, String name, String email, String address, Boolean admin, Date lastUpdated, Date lastLogin) {
         this.name = name;
         this.password = password;
         this.url = url;
@@ -76,34 +79,34 @@ public class User {
         this.admin = admin;
     }
 
-    public Timestamp getLastUpdated() {
+    public Date getLastUpdated() {
         return lastUpdated;
     }
 
-    public void setLastUpdated(Timestamp lastUpdated) {
+    public void setLastUpdated(Date lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
 
-    public void setLastLogin(Timestamp lastLogin) {
+    public void setLastLogin(Date lastLogin) {
         this.lastLogin = lastLogin;
     }
 
-    public Timestamp getLastLogin() {
+    public Date getLastLogin() {
         return lastLogin;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                ", url='" + url + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", address='" + address + '\'' +
-                ", admin='" + admin + '\'' +
-                ", lastUpdated='" + lastUpdated + '\'' +
-                ", lastLogin=" + lastLogin +
-                '}';
+               ", url='" + url + '\'' +
+               ", password='" + password + '\'' +
+               ", name='" + name + '\'' +
+               ", email='" + email + '\'' +
+               ", address='" + address + '\'' +
+               ", admin='" + admin + '\'' +
+               ", lastUpdated='" + lastUpdated + '\'' +
+               ", lastLogin=" + lastLogin +
+               '}';
     }
 
     @Override

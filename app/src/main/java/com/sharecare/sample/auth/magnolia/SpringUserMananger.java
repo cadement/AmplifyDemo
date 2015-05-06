@@ -20,6 +20,6 @@ public class SpringUserMananger extends ExternalUserManager implements Applicati
 
     @Override
     public User getUser(String name) throws UnsupportedOperationException {
-        return SpringExternalUser.BUILD_FROM(USER_REPOSITORY.readUser(name));
+        return SpringExternalUser.BUILD_FROM(USER_REPOSITORY.findOne(name));
     }
 }

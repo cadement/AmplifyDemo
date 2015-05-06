@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node sv:name="components" xmlns:sv="http://www.jcp.org/jcr/sv/1.0">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:content</sv:value>
+    </sv:property>
+    <sv:node sv:name="formattedText">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:contentNode</sv:value>
+        </sv:property>
+        <sv:property sv:name="dialog" sv:type="String">
+            <sv:value>templating:formattedTextDialog</sv:value>
+        </sv:property>
+        <sv:property sv:name="renderType" sv:type="String">
+            <sv:value>jsp</sv:value>
+        </sv:property>
+        <sv:property sv:name="templateScript" sv:type="String">
+            <sv:value>/WEB-INF/templates/component/formattedText.jsp</sv:value>
+        </sv:property>
+        <sv:property sv:name="title" sv:type="String">
+            <sv:value>Formatted Text</sv:value>
+        </sv:property>
+    </sv:node>
+    <sv:node sv:name="article">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:contentNode</sv:value>
+        </sv:property>
+        <sv:property sv:name="dialog" sv:type="String">
+            <sv:value>templating:article</sv:value>
+        </sv:property>
+        <sv:property sv:name="renderType" sv:type="String">
+            <sv:value>jsp</sv:value>
+        </sv:property>
+        <sv:property sv:name="templateScript" sv:type="String">
+            <sv:value>/WEB-INF/templates/component/article.jsp</sv:value>
+        </sv:property>
+        <sv:property sv:name="title" sv:type="String">
+            <sv:value>Article</sv:value>
+        </sv:property>
+    </sv:node>
+    <sv:node sv:name="articles">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:contentNode</sv:value>
+        </sv:property>
+        <sv:property sv:name="dialog" sv:type="String">
+            <sv:value>templating:hasTitleDialog</sv:value>
+        </sv:property>
+        <sv:property sv:name="renderType" sv:type="String">
+            <sv:value>jsp</sv:value>
+        </sv:property>
+        <sv:property sv:name="templateScript" sv:type="String">
+            <sv:value>/WEB-INF/templates/component/articles.jsp</sv:value>
+        </sv:property>
+        <sv:property sv:name="title" sv:type="String">
+            <sv:value>Articles</sv:value>
+        </sv:property>
+    </sv:node>
+    <sv:node sv:name="category">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:contentNode</sv:value>
+        </sv:property>
+        <sv:property sv:name="renderType" sv:type="String">
+            <sv:value>jsp</sv:value>
+        </sv:property>
+        <sv:property sv:name="templateScript" sv:type="String">
+            <sv:value>/WEB-INF/templates/component/category.jsp</sv:value>
+        </sv:property>
+        <sv:property sv:name="title" sv:type="String">
+            <sv:value>Category</sv:value>
+        </sv:property>
+    </sv:node>
+    <sv:node sv:name="categories">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:contentNode</sv:value>
+        </sv:property>
+        <sv:property sv:name="dialog" sv:type="String">
+            <sv:value>templating:hasTitleDialog</sv:value>
+        </sv:property>
+        <sv:property sv:name="renderType" sv:type="String">
+            <sv:value>jsp</sv:value>
+        </sv:property>
+        <sv:property sv:name="templateScript" sv:type="String">
+            <sv:value>/WEB-INF/templates/component/categories.jsp</sv:value>
+        </sv:property>
+        <sv:property sv:name="title" sv:type="String">
+            <sv:value>Categories</sv:value>
+        </sv:property>
+    </sv:node>
+</sv:node>

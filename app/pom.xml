@@ -16,6 +16,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.sharecare.sample</groupId>
+            <artifactId>articles-app</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
         </dependency>
@@ -39,6 +43,10 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>info.magnolia</groupId>
@@ -48,10 +56,10 @@
             <groupId>info.magnolia.activation</groupId>
             <artifactId>magnolia-module-activation</artifactId>
         </dependency>
-        <dependency>
-            <groupId>info.magnolia.blossom</groupId>
-            <artifactId>magnolia-module-blossom</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>info.magnolia.blossom</groupId>-->
+            <!--<artifactId>magnolia-module-blossom</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>info.magnolia</groupId>
             <artifactId>magnolia-templating</artifactId>

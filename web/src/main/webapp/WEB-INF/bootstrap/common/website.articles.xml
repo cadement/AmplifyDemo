@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node sv:name="articles" xmlns:sv="http://www.jcp.org/jcr/sv/1.0">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:page</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:template" sv:type="String">
+        <sv:value>templating:pages/one-column</sv:value>
+    </sv:property>
+    <sv:property sv:name="title" sv:type="String">
+        <sv:value>Articles</sv:value>
+    </sv:property>
+    <sv:node sv:name="header">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:area</sv:value>
+        </sv:property>
+    </sv:node>
+    <sv:node sv:name="main">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:area</sv:value>
+        </sv:property>
+        <sv:node sv:name="0">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+                <sv:value>mgnl:component</sv:value>
+            </sv:property>
+            <sv:property sv:name="mgnl:template" sv:type="String">
+                <sv:value>templating:components/articles</sv:value>
+            </sv:property>
+        </sv:node>
+    </sv:node>
+</sv:node>

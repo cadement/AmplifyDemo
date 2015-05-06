@@ -1,5 +1,6 @@
 package com.sharecare.sample.model.article;
 
+import com.sharecare.article.model.Article;
 import com.sharecare.sample.model.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

@@ -23,7 +23,7 @@ public class SpringAuthenticationProvider implements AuthenticationProvider {
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         UsernamePasswordAuthenticationToken usernameAuthenticationToken = (UsernamePasswordAuthenticationToken) authentication;
-        User user = userRepository.readUser((String) usernameAuthenticationToken.getPrincipal());
+        User user = userRepository.findOne((String) usernameAuthenticationToken.getPrincipal());
 
         return new SpringAuthentication(SpringExternalUser.BUILD_FROM(user));
     }

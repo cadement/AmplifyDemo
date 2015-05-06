@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:useBean id="articles" type="java.util.List<com.sharecare.sample.model.article.Article>" scope="request"/>
+<jsp:useBean id="articles" type="java.util.List<com.sharecare.article.model.Article>" scope="request"/>
 
 <div id="component" style="word-wrap: break-word;">
     <c:if test="${not empty content.title}"><h3>${content.title}</h3></c:if>

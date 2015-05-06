@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node sv:name="home" xmlns:sv="http://www.jcp.org/jcr/sv/1.0">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:page</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:template" sv:type="String">
+        <sv:value>templating:pages/one-column</sv:value>
+    </sv:property>
+    <sv:property sv:name="components" sv:type="String" sv:multiple="true">
+        <sv:value>templating:components/formattedText</sv:value>
+        <sv:value>templating:components/article</sv:value>
+    </sv:property>
+    <sv:property sv:name="title" sv:type="String">
+        <sv:value>Home Page</sv:value>
+    </sv:property>
+    <sv:node sv:name="main">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:area</sv:value>
+        </sv:property>
+        <sv:node sv:name="0">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+                <sv:value>mgnl:component</sv:value>
+            </sv:property>
+            <sv:property sv:name="mgnl:template" sv:type="String">
+                <sv:value>templating:components/formattedText</sv:value>
+            </sv:property>
+            <sv:property sv:name="body" sv:type="String">
+                <sv:value>&lt;p&gt;Here you will find examples of the various ways that Sharecare combines Magnolia CMS and Spring Framework. &amp;nbsp;Examples include:&lt;/p&gt;
+
+                    &lt;ul&gt;
+                    &lt;li&gt;Spring MVC invoking Magnolia views&lt;/li&gt;
+                    &lt;li&gt;Spring MVC passing database objects to Magnolia views&lt;/li&gt;
+                    &lt;li&gt;Blossom components merging data from the JCR and an external database&lt;/li&gt;
+                    &lt;li&gt;Magnolia synchronizing data between the JCR and an external database&lt;/li&gt;
+                    &lt;li&gt;Seamless interoperation between Spring Security and Magnolia&lt;/li&gt;
+                    &lt;li&gt;Akamai page-fragment caching using Spring MVC and Blossom&lt;/li&gt;
+                    &lt;/ul&gt;
+                </sv:value>
+            </sv:property>
+        </sv:node>
+        <sv:node sv:name="00">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+                <sv:value>mgnl:component</sv:value>
+            </sv:property>
+            <sv:property sv:name="mgnl:template" sv:type="String">
+                <sv:value>templating:components/formattedText</sv:value>
+            </sv:property>
+            <sv:property sv:name="body" sv:type="String">
+                <sv:value>&lt;p&gt;This demo application is made available under the GNU General Public License v3.0 (just like Magnolia CMS Community Edition) and you are
+                    free to use any of the code in this application pursuant to those terms. &amp;nbsp;Here&amp;#39;s the obligatory legal boilerplate:&lt;/p&gt;
+
+                    &lt;p&gt;&lt;em&gt;Copyright (C) 2014 Sharecare, Inc.&lt;/em&gt;&lt;/p&gt;
+
+                    &lt;p&gt;&lt;em&gt;This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published
+                    by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it
+                    will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+                    Public License for more details. You should have received a copy of the GNU General Public License along with this program. If not, see &lt;a
+                    href="http://www.gnu.org/licenses/"&gt;http://www.gnu.org/licenses/&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+                </sv:value>
+            </sv:property>
+            <sv:property sv:name="title" sv:type="String">
+                <sv:value>What can I do with this sample?</sv:value>
+            </sv:property>
+        </sv:node>
+        <sv:node sv:name="01">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+                <sv:value>mgnl:component</sv:value>
+            </sv:property>
+            <sv:property sv:name="mgnl:template" sv:type="String">
+                <sv:value>templating:components/formattedText</sv:value>
+            </sv:property>
+            <sv:property sv:name="body" sv:type="String">
+                <sv:value>&lt;p&gt;From here you should:&lt;/p&gt;
+
+                    &lt;ul&gt;
+                    &lt;li&gt;Explore articles on the site: &lt;a href="/articles"&gt;/articles&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;Explore users on the site: &lt;a href="/users"&gt;/users&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;Click on your username in the top left corner to browse your profile page&lt;/li&gt;
+                    &lt;li&gt;Go to &lt;a href="/.magnolia/admincentral"&gt;AdminCentral&lt;/a&gt; and explore the page mappings and configuration&lt;/li&gt;
+                    &lt;/ul&gt;
+                </sv:value>
+            </sv:property>
+            <sv:property sv:name="title" sv:type="String">
+                <sv:value>What should I do next?</sv:value>
+            </sv:property>
+        </sv:node>
+    </sv:node>
+    <sv:node sv:name="header">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:area</sv:value>
+        </sv:property>
+    </sv:node>
+</sv:node>

@@ -37,7 +37,7 @@ public class SpringLoginModule extends JCRAuthenticationModule implements Applic
 
             User serverUser = ((SpringExternalUser) this.user).getServerUser();
             serverUser.setLastLogin(new Timestamp(System.currentTimeMillis()));
-            USER_REPOSITORY.updateUser(serverUser);
+            USER_REPOSITORY.save(serverUser);
         }
 
         return success;

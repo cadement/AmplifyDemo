@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -48,16 +47,14 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST)
     public String createUserProfile(UserDTO userUpdates) {
         User user = userAssembler.assembleFrom(userUpdates);
-        userRepository.createUser(user);
+        userRepository.save(user);
         return "redirect:/users/" + user.getUrl();
     }
 
     @RequestMapping(value = "/{url}", method = RequestMethod.GET)
-    public ModelAndView getUserProfile(
-            @PathVariable("url") String userUrl,
-            SpringAuthentication authentication
-    ) {
-        User user = userRepository.readUser(userUrl);
+    public ModelAndView getUserProfile(@PathVariable("url") String userUrl,
+                                       SpringAuthentication authentication) {
+        User user = userRepository.findOne(userUrl);
 
         ModelAndView userProfilePage;
         if (authentication.getPrincipal().getUrl().equals(user.getUrl())) {
@@ -82,7 +79,8 @@ public class UserController {
     public ModelAndView editUserProfile(@PathVariable("url") String userUrl) {
         ModelAndView userProfilePage = new ModelAndView("/users/edit.html");
 
-        User user = userRepository.readUser(userUrl);
+        User user = userRepository.findOne(userUrl);
+
         userProfilePage.addObject("user", user);
 
         userProfilePage.addObject("title", "Edit Profile");
@@ -96,19 +94,19 @@ public class UserController {
     }
 
     @RequestMapping(value = "/{url}", method = RequestMethod.POST)
-    public String updateUserProfile(
-            @PathVariable("url") String userUrl,
-            UserDTO userUpdates
-    ) {
-        User user = userAssembler.applyUpdates(userRepository.readUser(userUrl), userUpdates);
-        userRepository.updateUser(user);
+    public String updateUserProfile(@PathVariable("url") String userUrl,
+                                    UserDTO userUpdates) {
+        User user = userRepository.findOne(userUrl);
+
+        user = userAssembler.applyUpdates(user, userUpdates);
+        userRepository.save(user);
         return "redirect:/users/" + userUrl;
     }
 
     @RequestMapping(value = "/{url}", method = RequestMethod.DELETE)
     public String deleteUserProfile(@PathVariable("url") String userUrl) {
-        User user = userRepository.readUser(userUrl);
-        userRepository.deleteUser(user);
+        User user = userRepository.findOne(userUrl);
+        userRepository.delete(user);
         return "redirect:/users";
     }
 }

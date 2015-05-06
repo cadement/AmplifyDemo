@@ -1,5 +1,7 @@
 package com.sharecare.sample.model.article;
 
+import com.sharecare.article.model.Article;
+import com.sharecare.article.model.ArticleRepository;
 import com.sharecare.sample.auth.spring.SpringAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
@@ -22,10 +24,8 @@ public class ArticleController {
     private final ReadArticleRepository readArticleRepository;
 
     @Autowired
-    public ArticleController(
-            ArticleRepository articleRepository,
-            ReadArticleRepository readArticleRepository
-    ) {
+    public ArticleController(ArticleRepository articleRepository,
+                             ReadArticleRepository readArticleRepository) {
         this.articleRepository = articleRepository;
         this.readArticleRepository = readArticleRepository;
     }
@@ -39,25 +39,20 @@ public class ArticleController {
     }
 
     @RequestMapping(value = "/{url}", method = RequestMethod.GET)
-    public ModelAndView getUserProfile(
-            @PathVariable("url") String url,
-            SpringAuthentication authorization
-    ) {
-        Article article = articleRepository.readArticle(url);
+    public ModelAndView getUserProfile(@PathVariable("url") String url,
+                                       SpringAuthentication authorization) {
+        ModelAndView modelAndView = new ModelAndView("/articles/article.html");
 
-        setLastReadBy(authorization, article);
-
-        String viewPath = "/articles/" + article.getUrl() + ".html";
-        ModelAndView modelAndView = new ModelAndView(viewPath);
-
+        Article article = articleRepository.findByUrl(url);
         modelAndView.addObject("title", article.getTitle());
-
         modelAndView.addObject("article", article);
 
         Map<String, String> breadcrumbs = new LinkedHashMap<String, String>();
         breadcrumbs.put("/", "Home");
         breadcrumbs.put("/articles", "Articles");
         modelAndView.addObject("breadcrumbs", breadcrumbs);
+
+        setLastReadBy(authorization, article);
 
         return modelAndView;
     }
@@ -74,7 +69,7 @@ public class ArticleController {
                             article.getUrl(),
                             new Timestamp(System.currentTimeMillis())
                     )
-            );
+                                                   );
         }
     }
 }

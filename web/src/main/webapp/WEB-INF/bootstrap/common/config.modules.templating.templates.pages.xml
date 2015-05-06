@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node sv:name="pages" xmlns:sv="http://www.jcp.org/jcr/sv/1.0">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:content</sv:value>
+    </sv:property>
+    <sv:node sv:name="one-column">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:contentNode</sv:value>
+        </sv:property>
+        <sv:property sv:name="dialog" sv:type="String">
+            <sv:value>templating:pageProperties</sv:value>
+        </sv:property>
+        <sv:property sv:name="renderType" sv:type="String">
+            <sv:value>jsp</sv:value>
+        </sv:property>
+        <sv:property sv:name="templateScript" sv:type="String">
+            <sv:value>/WEB-INF/templates/page/one-column.jsp</sv:value>
+        </sv:property>
+        <sv:property sv:name="title" sv:type="String">
+            <sv:value>One-Column Page</sv:value>
+        </sv:property>
+        <sv:property sv:name="visible" sv:type="String">
+            <sv:value>true</sv:value>
+        </sv:property>
+        <sv:node sv:name="areas">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+                <sv:value>mgnl:contentNode</sv:value>
+            </sv:property>
+            <sv:node sv:name="main">
+                <sv:property sv:name="jcr:primaryType" sv:type="Name">
+                    <sv:value>mgnl:contentNode</sv:value>
+                </sv:property>
+                <sv:property sv:name="dialog" sv:type="String">
+                    <sv:value>templating:hasTitleDialog</sv:value>
+                </sv:property>
+                <sv:property sv:name="renderType" sv:type="String">
+                    <sv:value>jsp</sv:value>
+                </sv:property>
+                <sv:property sv:name="templateScript" sv:type="String">
+                    <sv:value>/WEB-INF/templates/area/generic.jsp</sv:value>
+                </sv:property>
+                <sv:property sv:name="type" sv:type="String">
+                    <sv:value>list</sv:value>
+                </sv:property>
+            </sv:node>
+            <sv:node sv:name="header">
+                <sv:property sv:name="jcr:primaryType" sv:type="Name">
+                    <sv:value>mgnl:contentNode</sv:value>
+                </sv:property>
+                <sv:property sv:name="renderType" sv:type="String">
+                    <sv:value>jsp</sv:value>
+                </sv:property>
+                <sv:property sv:name="templateScript" sv:type="String">
+                    <sv:value>/WEB-INF/templates/area/header.jsp</sv:value>
+                </sv:property>
+                <sv:property sv:name="type" sv:type="String">
+                    <sv:value>noComponent</sv:value>
+                </sv:property>
+            </sv:node>
+        </sv:node>
+    </sv:node>
+</sv:node>
