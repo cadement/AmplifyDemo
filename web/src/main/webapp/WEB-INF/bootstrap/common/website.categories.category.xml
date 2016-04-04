@@ -6,6 +6,10 @@
     <sv:property sv:name="mgnl:template" sv:type="String">
         <sv:value>templating:pages/one-column</sv:value>
     </sv:property>
+    <sv:property sv:name="components" sv:type="String" sv:multiple="true">
+        <sv:value>templating:components/category</sv:value>
+        <sv:value>templating:components/articles</sv:value>
+    </sv:property>
     <sv:node sv:name="header">
         <sv:property sv:name="jcr:primaryType" sv:type="Name">
             <sv:value>mgnl:area</sv:value>
@@ -21,6 +25,17 @@
             </sv:property>
             <sv:property sv:name="mgnl:template" sv:type="String">
                 <sv:value>templating:components/category</sv:value>
+            </sv:property>
+        </sv:node>
+        <sv:node sv:name="00">
+            <sv:property sv:name="jcr:primaryType" sv:type="Name">
+                <sv:value>mgnl:component</sv:value>
+            </sv:property>
+            <sv:property sv:name="mgnl:template" sv:type="String">
+                <sv:value>templating:components/articles</sv:value>
+            </sv:property>
+            <sv:property sv:name="title" sv:type="String">
+                <sv:value>Articles</sv:value>
             </sv:property>
         </sv:node>
     </sv:node>
